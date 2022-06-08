@@ -84,10 +84,17 @@ class RestaurantTest {
     @Test
     public void when_itemnames_are_passed_should_return_ordervalue(){
         List <String> orders = new ArrayList();
-        orders.add("Sizzling brownie");
-        orders.add("Vegetable lasagne");
+        orders.add(restaurant.getMenu().get(0).getName());
+        orders.add(restaurant.getMenu().get(1).getName());
+
+     //   orders.add("Sweet corn soup");
+     //   orders.add("Vegetable lasagne");
         
         assertNotNull(restaurant.getOrderValue(orders));
+
+        assertEquals(388, restaurant.getOrderValue(orders));
+
+
     }
 
     //<<<<<<<<<<<<<<<<<<< ORDER VALUE>>>>>>>>>>>>>>>>>>>>>>>>>

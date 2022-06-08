@@ -67,8 +67,16 @@ public class Restaurant {
         return name;
     }
 
-    public Double getOrderValue(List<String> orders) {
-        return null;
+    public int getOrderValue(List<String> orders) {
+        int orderValue = 0;
+        for (String itemName: orders){
+            Item item = findItemByName(itemName);
+            if (item != null){
+                orderValue += item.getPrice();
+            }
+        }
+
+        return orderValue;
     }
 
 }
