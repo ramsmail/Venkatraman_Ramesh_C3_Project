@@ -5,6 +5,8 @@ import org.junit.jupiter.api.TestInstance;
 import org.mockito.Mockito;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -76,4 +78,18 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    //<<<<<<<<<<<<<<<<<<< ORDER VALUE>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    @Test
+    public void when_itemnames_are_passed_should_return_ordervalue(){
+        List <String> orders = new ArrayList();
+        orders.add("Sizzling brownie");
+        orders.add("Vegetable lasagne");
+        
+        assertNotNull(restaurant.getOrderValue(orders));
+    }
+
+    //<<<<<<<<<<<<<<<<<<< ORDER VALUE>>>>>>>>>>>>>>>>>>>>>>>>>
+
 }

@@ -67,4 +67,8 @@ public class Restaurant {
         return name;
     }
 
+    public Double getOrderValue(List<String> orders) {
+        return null;
+    }
+
 }
